@@ -1,2 +1,2 @@
-# Generic-svelte
-Generic svelte portal
+# Generic-solid
+Generic solid portal
