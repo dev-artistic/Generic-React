@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -50,12 +52,7 @@
   }
 }
 
-body {
-  margin: 0;
-}
-
 #root {
-  width: 1126px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -64,6 +61,10 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
 }
 
 h1,
@@ -93,19 +94,4 @@ h2 {
 }
 p {
   margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }
