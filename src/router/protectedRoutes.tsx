@@ -1,6 +1,6 @@
 import { createRoute, redirect } from '@tanstack/react-router'
 import { rootRoute } from './router'
-import Business from '../pages/business/business'
+import Business from '../pages/business/Business'
 
 export const requireAuth = ({ context, location }: { context: any, location: any }) => {
   if (!context.user) {

@@ -1,7 +1,7 @@
 import { createRoute } from "@tanstack/react-router"
 import { rootRoute } from "./router"
-import Hero from "../pages/hero/hero"
-import Business from "../pages/business/business"
+import Hero from "../pages/hero/Hero"
+import Business from "../pages/business/Business"
 
 const heroRoute = createRoute({
   getParentRoute: () => rootRoute,

@@ -1,0 +1,14 @@
+.navbar__desktop-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #3f3f46;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.navbar__desktop-link:hover {
+  color: #0284c7;
+}
