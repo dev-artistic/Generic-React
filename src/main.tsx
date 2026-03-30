@@ -1,10 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './main.css'
-import Hero from './pages/hero/hero.tsx'
+import { RouterProvider } from '@tanstack/react-router'
+import { router } from './router/router.tsx'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Hero />
+    <QueryClientProvider client={queryClient}>
+     <RouterProvider router={router} />
+    </QueryClientProvider>
   </StrictMode>,
 )
