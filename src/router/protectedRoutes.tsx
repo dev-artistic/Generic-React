@@ -11,11 +11,18 @@ export const requireAuth = ({ context, location }: { context: any, location: any
   }
 }
 
-const businessRoute = createRoute({
+//Parent protected route
+const protectedRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/business1',
+  path: 'user',
   component:Business,
-  loader: requireAuth
+  beforeLoad: requireAuth
 })
 
-export const privateRoutes = [businessRoute]
+const BusinessRoute = createRoute({
+  getParentRoute: () => protectedRoute,
+  path: 'business1',
+  component:Business,
+})
+
+export const privateRoutes = [protectedRoute,BusinessRoute]

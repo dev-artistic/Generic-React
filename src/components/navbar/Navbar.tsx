@@ -6,10 +6,10 @@ import { RouterLink } from '../../router/router';
 const Navbar = () => {
   const navItems = [
     { label: 'Home', icon: <Home size={20} />, href: '/' },
-    { label: 'Products', icon: <Box size={20} />, href: '/products' },
-    { label: 'About', icon: <Info size={20} />, href: '/about' },
-    { label: 'Profile', icon: <User size={20} />, href: '/profile' },
-    { label: 'Settings', icon: <Settings size={20} />, href: '/settings' },
+    { label: 'Products', icon: <Box size={20} />, href: '/business1' },
+    { label: 'About', icon: <Info size={20} />, href: '/business' },
+    // { label: 'Profile', icon: <User size={20} />, href: '/profile' },
+    // { label: 'Settings', icon: <Settings size={20} />, href: '/settings' },
   ];
 
   return (

@@ -3,20 +3,19 @@ import {
   Outlet,
   createRouter,
   createRootRoute,
-  useNavigate,
   Link,
 } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import ErrorPage from '../pages/errorPage/ErrorPage'
 import { privateRoutes } from './protectedRoutes'
 import { publicRoutes } from './publicRoutes'
 import type { ReactNode } from 'react'
 import "./router.css";
 import Navbar from '../components/navbar/Navbar'
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
 
 //root route
-const user = {"name":"Manish"};
+const user = null;
 export const rootRoute = createRootRoute({
   component: () => (
     <>
@@ -31,14 +30,6 @@ export const rootRoute = createRootRoute({
     })
 })
 
-
-
-
-// Router redirect function
-const navigate = useNavigate()
-export const RouterNavigation = ({href = "/"}:{href?: string}) => {
-    navigate({to:href})
-}
 
 //  Router link component
 export const RouterLink = ({ href = "/",key, children }: { href?: string, key:string, children: ReactNode }) => {
