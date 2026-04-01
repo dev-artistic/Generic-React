@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import { Menu, X, Home, Settings, User, Info, Box } from 'lucide-react';
+import { Menu, X, Home, Info, Box } from 'lucide-react';
 import './navbar.css';
 import { RouterLink } from '../../router/router';
 

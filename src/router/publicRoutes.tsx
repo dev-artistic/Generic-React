@@ -4,7 +4,7 @@ import Hero from "../pages/hero/Hero"
 import Business from "../pages/business/Business"
 import Login from "../pages/login/Login"
 
-// Parent PUblic route
+
 export const heroRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/',
@@ -12,15 +12,22 @@ export const heroRoute = createRoute({
 })
 
 const loginRoute = createRoute({
-  getParentRoute: () => heroRoute,
+  getParentRoute: () => rootRoute,
   path: 'login',
   component:Login
 })
 
+// Parent Public route
+const publicRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: 'view',
+  component:Business,
+})
+
 const businessRoute = createRoute({
-  getParentRoute: () => heroRoute,
+  getParentRoute: () => rootRoute,
   path: 'business',
   component:Business
 })
 
-export const publicRoutes = [heroRoute, businessRoute, loginRoute]
+export const publicRoutes = [heroRoute,loginRoute, businessRoute, publicRoute]

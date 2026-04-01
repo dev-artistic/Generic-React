@@ -32,9 +32,9 @@ export const rootRoute = createRootRoute({
 
 
 //  Router link component
-export const RouterLink = ({ href = "/",key, children }: { href?: string, key:string, children: ReactNode }) => {
+export const RouterLink = ({ href = "/", children }: { href?: string, children: ReactNode }) => {
     return (
-        <Link to={href} key={key} className="navbar__desktop-link">
+        <Link to={href} className="navbar__desktop-link">
             {children}
         </Link>
     )

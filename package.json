@@ -13,6 +13,7 @@
     "@tanstack/react-query": "^5.95.2",
     "@tanstack/react-router": "^1.168.2",
     "@tanstack/react-router-devtools": "^1.166.11",
+    "firebase": "^12.11.0",
     "lucide-react": "^1.7.0",
     "radix-ui": "^1.4.3",
     "react": "^19.2.4",
