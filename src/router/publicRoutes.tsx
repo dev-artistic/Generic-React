@@ -1,33 +1,32 @@
-import { createRoute } from "@tanstack/react-router"
+import { createRoute, lazyRouteComponent } from "@tanstack/react-router"
 import { rootRoute } from "./router"
 import Hero from "../pages/hero/Hero"
-import Business from "../pages/business/Business"
-import Login from "../pages/login/Login"
 
-
+// The starting component, do not lazy load
 export const heroRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/',
   component: Hero
 })
 
+
+// Login route
+const loginBundle = {
+  login: lazyRouteComponent(() => import("../pages/login/Login"))
+};
+
 const loginRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: 'login',
-  component:Login
+  component: loginBundle.login,
 })
 
-// Parent Public route
+
+// Parent Public route, same as starting component, do not lazy load
 const publicRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: 'view',
-  component:Business,
+  component: Hero,
 })
 
-const businessRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: 'business',
-  component:Business
-})
-
-export const publicRoutes = [heroRoute,loginRoute, businessRoute, publicRoute]
+export const publicRoutes = [heroRoute, loginRoute, publicRoute]

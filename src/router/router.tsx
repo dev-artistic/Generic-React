@@ -12,6 +12,7 @@ import type { ReactNode } from 'react'
 import "./router.css";
 import Navbar from '../components/navbar/Navbar'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import GlobalLoader from '../components/globalLoader/GlobalLoader'
 
 
 //root route
@@ -21,6 +22,7 @@ export const rootRoute = createRootRoute({
     <>
       <Navbar/>
       <Outlet />
+      <GlobalLoader/>
       <TanStackRouterDevtools />
     </>
   ),

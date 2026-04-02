@@ -1,6 +1,5 @@
-import { createRoute, redirect } from '@tanstack/react-router'
+import { createRoute, lazyRouteComponent, redirect } from '@tanstack/react-router'
 import { rootRoute } from './router'
-import Business from '../pages/business/Business'
 
 export const requireAuth = ({ context, location }: { context: any, location: any }) => {
   if (!context.user) {
@@ -12,17 +11,22 @@ export const requireAuth = ({ context, location }: { context: any, location: any
 }
 
 //Parent protected route
+const userBundle = {
+  user: lazyRouteComponent(() => import('../pages/user/User')),
+  business: lazyRouteComponent(() => import('../pages/business/Business'))
+};
+
 const protectedRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: 'user',
-  component:Business,
+  component: userBundle.user,
   beforeLoad: requireAuth
 })
 
 const BusinessRoute = createRoute({
   getParentRoute: () => protectedRoute,
   path: 'business1',
-  component:Business,
+  component:userBundle.business,
 })
 
 export const privateRoutes = [protectedRoute,BusinessRoute]
