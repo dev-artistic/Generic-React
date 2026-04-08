@@ -23,11 +23,14 @@ const Login=()=> {
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      alert("Google login success");
     } catch (err: any) {
-      alert(err.message);
+      console.error(err)
     }
   };
+
+  const printUser=()=>{
+    console.log(auth.currentUser)
+  }
 
   return (
     <div className="login-container">
@@ -67,9 +70,9 @@ const Login=()=> {
         <Key size={18} />
         Login with Google
       </button>
-      <button className="btn btn-social btn-facebook">
+      <button className="btn btn-social btn-facebook" onClick={printUser}>
         <Key size={18} />
-        Login with Facebook
+        print user
       </button>
     </div>
   );

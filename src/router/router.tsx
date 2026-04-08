@@ -16,7 +16,6 @@ import GlobalLoader from '../components/globalLoader/GlobalLoader'
 
 
 //root route
-const user = null;
 export const rootRoute = createRootRoute({
   component: () => (
     <>
@@ -28,7 +27,7 @@ export const rootRoute = createRootRoute({
   ),
   notFoundComponent:ErrorPage,
   context: ()=> ({
-        user
+        user:null
     })
 })
 
