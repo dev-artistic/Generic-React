@@ -1,9 +1,10 @@
-import { createRoute, lazyRouteComponent, redirect } from '@tanstack/react-router'
+import { createRoute, lazyRouteComponent, redirect, type ParsedLocation  } from '@tanstack/react-router'
 import { rootRoute } from './router'
+import type { User } from 'firebase/auth';
 
-export const requireAuth = ({ context, location }: { context: any, location: any }) => {
+export const requireAuth  = ({ context, location }: { context: { user: User|null }, location: ParsedLocation }) => {
   if (!context.user) {
-    throw redirect({ to: '/',
+    throw redirect({ to: '/login',
         search: {
           redirect: location.href,
         } })

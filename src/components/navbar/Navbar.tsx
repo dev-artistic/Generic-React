@@ -1,14 +1,14 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import { Menu, X, Home, Info, Box } from 'lucide-react';
+import { Menu, X, Home, Info, Box, User } from 'lucide-react';
 import './navbar.css';
 import { RouterLink } from '../../router/router';
 
 const Navbar = () => {
   const navItems = [
     { label: 'Home', icon: <Home size={20} />, href: '/' },
-    { label: 'Products', icon: <Box size={20} />, href: '/business1' },
-    { label: 'About', icon: <Info size={20} />, href: '/business' },
-    // { label: 'Profile', icon: <User size={20} />, href: '/profile' },
+    { label: 'Products', icon: <Box size={20} />, href: '/user/business1' },
+    { label: 'User', icon: <Info size={20} />, href: '/user' },
+    { label: 'Login', icon: <User size={20} />, href: '/login' },
     // { label: 'Settings', icon: <Settings size={20} />, href: '/settings' },
   ];
 
