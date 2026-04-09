@@ -13,6 +13,7 @@ import "./router.css";
 import Navbar from '../components/navbar/Navbar'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import GlobalLoader from '../components/globalLoader/GlobalLoader'
+import type { User } from 'firebase/auth'
 
 
 //root route
@@ -26,9 +27,7 @@ export const rootRoute = createRootRoute({
     </>
   ),
   notFoundComponent:ErrorPage,
-  context: ()=> ({
-        user:null
-    })
+  context: ()=> ({} as {user: User|null})
 })
 
 
